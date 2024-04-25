@@ -1,5 +1,3 @@
-Sure, here's a simplified README without Markdown formatting:
-
 Ceramics and Pottery Website
 
 Welcome to the Ceramics and Pottery website! This web application is designed to showcase and sell ceramics and pottery products online.
