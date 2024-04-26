@@ -13,6 +13,9 @@ import UpdateUser from './Pages/UpdateUser';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Home from './Pages/Home';
 import FirebaseProvider from './FirebaseProvider/FirebaseProvider';
+import AllArt from './Pages/AllArt';
+import AddCraft from './Pages/AddCraft';
+import MyArtList from './Pages/MyArtList';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +26,18 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
+      },
+      {
+        path: '/allart',
+        element: <AllArt></AllArt>
+      },
+      {
+        path: '/addcraft',
+        element: <AddCraft></AddCraft>
+      },
+      {
+        path: '/myart',
+        element: <MyArtList></MyArtList>
       },
       {
         path: '/login',

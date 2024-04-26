@@ -18,22 +18,23 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2' : 'font-bold p-2 sm:mr-2'} to="/"><a>Home</a></NavLink>
 
 
-                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/"><a>Properties</a></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/allart"><a>All Art & craft Items</a></NavLink>
 
 
-                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/"><a>Agents</a></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/addcraft"><a>Add Craft Item</a></NavLink>
 
 
 
-                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/"><a>Contact</a></NavLink>
+                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/myart"><a>My Art&Craft List</a></NavLink>
 
 
-                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/"><a>About Us</a></NavLink>
+
 
                     </ul>
                 </div>
                 <NavLink to="/">
-                    <a className="btn btn-ghost text-xl md:text-3xl font-bold text-blue-500 hover:text-blue-700">HavenCrest</a>
+                    <a className="btn btn-ghost text-xl md:text-3xl
+                     font-bold text-blue-500 hover:text-blue-700">Ceramics Arena</a>
                 </NavLink>
 
 
@@ -44,16 +45,16 @@ const Navbar = () => {
                     <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 p-2 sm:mr-2 rounded'} to="/"><a>Home</a></NavLink>
 
 
-                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/"><a>Properties</a></NavLink>
+                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/allart"><a>All Art & craft Items</a></NavLink>
 
 
-                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/"><a>Agents</a></NavLink>
+                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/addcraft"><a>Add Craft Item</a></NavLink>
 
 
-                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/"><a>Contact</a></NavLink>
+                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/myart"><a>My Art&Craft List</a></NavLink>
 
 
-                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/login"><a>About Us</a></NavLink>
+
 
                 </ul>
             </div>
@@ -71,8 +72,8 @@ const Navbar = () => {
                             title={user?.displayName}>
                             <div className="w-10 rounded-full" >
                                 <img
-                                    src={user?.photoURL || 
-                                    "https://i.ibb.co/sjymvr8/Capture4.png"} />
+                                    src={user?.photoURL ||
+                                        "https://i.ibb.co/sjymvr8/Capture4.png"} />
                             </div>
                         </label>
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3
@@ -96,16 +97,16 @@ const Navbar = () => {
                         </Link>
                 }
                 {
-                   user ? <button
-                    onClick={logout}
-                    className="btn btn-medium btn-ghost bg-black text-white mt-2">Logout</button>
-                    : <a></a>
+                    user ? <button
+                        onClick={logout}
+                        className="btn btn-medium btn-ghost bg-black text-white mt-2">Logout</button>
+                        : <a></a>
                 }
 
 
 
             </div>
-            
+
         </div>
     );
 };
