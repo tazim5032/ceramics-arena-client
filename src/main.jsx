@@ -9,13 +9,15 @@ import ErrorPage from './ErrorPage.jsx';
 import Root from './Root.jsx';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
-import UpdateUser from './Pages/UpdateUser';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 import Home from './Pages/Home';
 import FirebaseProvider from './FirebaseProvider/FirebaseProvider';
 import AllArt from './Pages/AllArt';
 import AddCraft from './Pages/AddCraft';
 import MyArtList from './Pages/MyArtList';
+import Details from './Pages/Details';
+import Update from './Pages/Update';
+
 
 const router = createBrowserRouter([
   {
@@ -29,7 +31,8 @@ const router = createBrowserRouter([
       },
       {
         path: '/allart',
-        element: <AllArt></AllArt>
+        element: <AllArt></AllArt>,
+        loader: () => fetch('http://localhost:5000/craft')
       },
       {
         path: '/addcraft',
@@ -37,7 +40,21 @@ const router = createBrowserRouter([
       },
       {
         path: '/myart',
-        element: <MyArtList></MyArtList>
+        element: <PrivateRoute>
+          <MyArtList></MyArtList>
+        </PrivateRoute>
+      },
+      {
+        path: '/details/:id',
+        element: <PrivateRoute>
+          <Details></Details>
+        </PrivateRoute>
+      },
+      {
+        path: '/update/:id',
+        element: <PrivateRoute>
+          <Update></Update>
+        </PrivateRoute>
       },
       {
         path: '/login',
@@ -47,13 +64,7 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
-      {
-        path: '/update',
-        element: <PrivateRoute>
-          <UpdateUser></UpdateUser>
-        </PrivateRoute>,
-
-      },
+      
     ]
   },
 ]);

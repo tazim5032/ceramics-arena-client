@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
-
+import UseAuth from "../Hook/UseAuth";
 const AddCraft = () => {
-
+    const { user } = UseAuth();
     const handleAddProduct = e => {
         e.preventDefault();
 
@@ -16,15 +16,15 @@ const AddCraft = () => {
         const customization = form.customization.value;
         const stockStatus = form.stockStatus.value;
         const photo = form.photo.value;
-        const username = form.username.value;
-        const email = form.email.value;
+        const username = user.displayName;
+        const email = user.email;
 
         const info = {
             name, subcategory, description, price,
             rating, time, customization, stockStatus, photo, username, email
         };
 
-        fetch('http://localhost:5000/addcraft', {
+        fetch('http://localhost:5000/craft', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -65,10 +65,18 @@ const AddCraft = () => {
                         <label className="label">
                             <span className="label-text">Subcategory Name</span>
                         </label>
-                        <label className="input-group">
-                            <input type="text" name="subcategory" placeholder="Subcategory Name"
-                                className="input input-bordered w-full" required />
-                        </label>
+                        
+                        
+                        <div className="input-group">
+                            <select name="subcategory" className="select select-bordered w-full">
+                                <option value="Clay made pottery">Clay made pottery</option>
+                                <option value="Stoneware">Stoneware</option>
+                                <option value="Porcelain">Porcelain</option>
+                                <option value="Terra Cotta">Terra Cotta</option>
+                                <option value="Ceramics & Architectural">Ceramics & Architectural</option>
+                                <option value="Home decor pottery">Home decor pottery</option>
+                            </select>
+                        </div>
                     </div>
                 </div>
 
@@ -88,7 +96,7 @@ const AddCraft = () => {
                             <span className="label-text">Price</span>
                         </label>
                         <label className="input-group">
-                            <input type="number" name="price" placeholder="Price"
+                            <input type="number" name="price" placeholder="Price USD"
                                 className="input input-bordered w-full" step="any" required />
                         </label>
                     </div>
@@ -136,8 +144,8 @@ const AddCraft = () => {
                         </label>
                         <div className="input-group">
                             <select name="stockStatus" className="select select-bordered w-full">
-                                <option value="inStock">In stock</option>
-                                <option value="madeToOrder">Made to order</option>
+                                <option value="In Stock">In stock</option>
+                                <option value="Made to order">Made to order</option>
                             </select>
                         </div>
                     </div>
@@ -161,8 +169,8 @@ const AddCraft = () => {
                             <span className="label-text">User Name</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="username" placeholder="User Name"
-                                className="input input-bordered w-full" required/>
+                            <input type="text" name="username" defaultValue={user.displayName}
+                                className="input input-bordered w-full" disabled/>
                         </label>
                     </div>
 
@@ -171,8 +179,8 @@ const AddCraft = () => {
                             <span className="label-text">User Email</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name="email" placeholder="User Email"
-                                className="input input-bordered w-full" required/>
+                            <input type="text" name="email" defaultValue={user.email}
+                                className="input input-bordered w-full" disabled/>
                         </label>
                     </div>
                 </div>

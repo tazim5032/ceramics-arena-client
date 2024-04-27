@@ -1,88 +1,200 @@
-import Helmet from "react-helmet";
-import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import UseAuth from "../Hook/UseAuth";
 //import UseAuth from "../Hook/UseAuth";
 //import UseAuth from "../Hook/UseAuth";
 
 
 const Update = () => {
-    const { updateUserProfile } = UseAuth();
-   
-    //console.log(createUser);
     
+    const { id } = useParams();
+    //console.log('is is ', id);
 
-    const {
-        register,
-        handleSubmit,
-        formState: { errors },
-    } = useForm()
+    const [product, setProduct] = useState({});
 
-    const navigate = useNavigate();
-   const from = '/update';
+    useEffect(() => {
 
-    const onSubmit = (data) => {
-                updateUserProfile(data.fullName, data.photo)
-                    .then(() => {
-                        navigate(from);
-                        Swal.fire({
-                            icon: 'success',
-                            title: 'Congrats',
-                            text: 'Profile Updated!',
-                        });
-                        location.reload();
-                    });
-                    
-            
-           
+        fetch(`http://localhost:5000/updateProduct/${id}`)
+        .then(res => res.json())
+        .then(data =>{
+            setProduct(data);
+            //console.log(data)
+        })
+       
+    }, [id]);
+
+   // console.log('product is ',product);
+
+    const handleUpdate = e =>{
+        e.preventDefault();
+
+        const form = e.target;
+
+        const name = form.name.value;
+        const subcategory = form.subcategory.value;
+        const description = form.description.value;
+        const price = form.price.value;
+        const rating = form.rating.value;
+        const time = form.time.value;
+        const customization = form.customization.value;
+        const stockStatus = form.stockStatus.value;
+        const photo = form.photo.value;
+       
+        const info = {
+            name, subcategory, description, price,
+            rating, time, customization, stockStatus, photo
+        };
+
+        fetch(`http://localhost:5000/updateProduct/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(info) 
+        })
+        .then(res => res.json())
+        .then(data => {
+            if(data.modifiedCount){
+                Swal.fire({
+                    title: 'Success!',
+                    text: 'Craft Item Updated Successfully!',
+                    icon: 'success',
+                    confirmButtonText: 'ok'
+                  })
+            }
+        })
+
     }
 
-
     return (
-        <div className="bg-cyan-50 mx-[1%] md:mx[10%] lg:mx-[20%] rounded-xl">
-            <Helmet>
-                <title>Update Profile</title>
-            </Helmet>
-            <h1 className="text-2xl text-center my-10 pt-6">Update Profile</h1>
+        <div className="bg-[#FAF3E0] p-2 sm:p-24 sm:pt-0">
+            
+            <h1 className="text-2xl text-center pt-6">Update Product</h1>
 
-            <form onSubmit={handleSubmit(onSubmit)} className="md:w-3/4 lg:w-1/2 mx-auto">
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Full Name</span>
-                    </label>
-                    <input type="text" name="name" placeholder="Full Name"
-                        className="input input-bordered"
-                        {...register("fullName", { required: true })}
-                    />
-                    {errors.fullName && <span className="text-red-600">Full Name is Required</span>}
+            <form onSubmit={handleUpdate} >
+                <div className="md:flex mb-4">
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Item Name</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="name" defaultValue={product.name}
+                                className="input input-bordered w-full" />
+                        </label>
+                    </div>
+
+                    <div className="form-control md:w-1/2 md:ml-4">
+                        <label className="label">
+                            <span className="label-text">Subcategory Name</span>
+                        </label>
+                        
+                        
+                        <div className="input-group">
+                            <select name="subcategory" className="select select-bordered w-full" 
+                            defaultValue={product.subcategory}>
+                                <option value="clay">Clay-made pottery</option>
+                                <option value="stoneware">Stoneware</option>
+                                <option value="porcelain">Porcelain</option>
+                                <option value="terra">Terra Cotta</option>
+                                <option value="ceramics">Ceramics & Architectural</option>
+                                <option value="home">Home decor pottery</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
 
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Email</span>
-                    </label>
-                    <input type="email" name="email" placeholder="email"
-                        className="input input-bordered"
-                        disabled
-                    />
-                   
+                <div className="md:flex mb-4">
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Short Description</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="description" defaultValue={product.description}
+                                className="input input-bordered w-full" />
+                        </label>
+                    </div>
+
+                    <div className="form-control md:w-1/2 md:ml-4">
+                        <label className="label">
+                            <span className="label-text">Price</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="number" name="price" defaultValue={product.price}
+                                className="input input-bordered w-full" step="any"  />
+                        </label>
+                    </div>
                 </div>
 
-                <div className="form-control">
-                    <label className="label">
-                        <span className="label-text">Photo URL</span>
-                    </label>
-                    <input type="text" name="photo" placeholder="Photo URL"
-                        className="input input-bordered"
-                        {...register("photo", { required: true })}
-                    />
-                    {errors.photo && <span className="text-red-600">Photo URL is Required</span>}
+                <div className="md:flex mb-4">
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Rating</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="number" name="rating" defaultValue={product.rating}
+                                className="input input-bordered w-full" step="any"
+                                min="0" max="5" />
+                        </label>
+                    </div>
+
+                    <div className="form-control md:w-1/2 md:ml-4">
+                        <label className="label">
+                            <span className="label-text">Processing Time in Days</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="number" name="time" defaultValue={product.time}
+                                className="input input-bordered w-full" />
+                        </label>
+                    </div>
                 </div>
+
+                <div className="md:flex mb-4">
+                    <div className="form-control md:w-1/2">
+                        <label className="label">
+                            <span className="label-text">Customization</span>
+                        </label>
+                        <div className="input-group">
+                            <select name="customization" className="select select-bordered w-full"
+                            defaultValue={product.customization}>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div className="form-control md:w-1/2 md:ml-4">
+                        <label className="label">
+                            <span className="label-text">Stock Status</span>
+                        </label>
+                        <div className="input-group">
+                            <select name="stockStatus" className="select select-bordered w-full"
+                            defaultValue={product.stockStatus}>
+                                <option value="inStock">In stock</option>
+                                <option value="madeToOrder">Made to order</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="mb-4">
+                    <div className="form-control w-full">
+                        <label className="label">
+                            <span className="label-text">Photo URL</span>
+                        </label>
+                        <label className="input-group">
+                            <input type="text" name="photo" defaultValue={product.photo}
+                                className="input input-bordered w-full" />
+                        </label>
+                    </div>
+                </div>
+
                 
-                <div className="form-control mt-6 pb-6">
-                    <button className="btn bg-black text-white font-bold text-xl">Update Profile</button>
-                </div>
+
+
+
+
+                <input className="btn btn-block bg-black text-white"
+                    type="submit" value="Add" />
             </form>
     
         </div>
