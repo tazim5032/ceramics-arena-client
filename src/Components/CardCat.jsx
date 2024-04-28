@@ -3,7 +3,7 @@ import { IoPricetagsOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const Card = ({ item, items, setItems }) => {
+const CardCat = ({ item, items, setItems }) => {
     const { _id, name, subcategory, price, rating, stockStatus, photo } = item;
 
     const handleDelete = id => {
@@ -46,20 +46,7 @@ const Card = ({ item, items, setItems }) => {
                         </span>
                     </div>
                 </div>
-                <div className="px-6 pb-4 pt-2">
-                    <div className="flex justify-between">
-                        <Link to={`/update/${_id}`} className="text-sm text-gray-600 hover:text-gray-900 mr-2">
-                            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
-                                Update
-                            </button>
-                        </Link>
-                        <button onClick={() => handleDelete(_id)} className="text-sm text-gray-600 hover:text-gray-900 focus:outline-none">
-                            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
-                                Delete
-                            </button>
-                        </button>
-                    </div>
-                </div>
+                
                 <div className="px-6 flex justify-end pb-2">
                     <Link to={`/details/${_id}`} className="text-sm text-gray-600 hover:text-gray-900">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
@@ -72,4 +59,4 @@ const Card = ({ item, items, setItems }) => {
     );
 };
 
-export default Card;
+export default CardCat;

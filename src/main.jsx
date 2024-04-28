@@ -17,6 +17,7 @@ import AddCraft from './Pages/AddCraft';
 import MyArtList from './Pages/MyArtList';
 import Details from './Pages/Details';
 import Update from './Pages/Update';
+import ShowByCategory from './Pages/ShowByCategory';
 
 
 const router = createBrowserRouter([
@@ -36,8 +37,14 @@ const router = createBrowserRouter([
         loader: () => fetch('http://localhost:5000/craft')
       },
       {
+        path: '/allCategory/:subcategory',
+        element: <ShowByCategory></ShowByCategory>
+      },
+      {
         path: '/addcraft',
-        element: <AddCraft></AddCraft>
+        element: <PrivateRoute>
+          <AddCraft></AddCraft>
+        </PrivateRoute>
       },
       {
         path: '/myart',
@@ -65,7 +72,7 @@ const router = createBrowserRouter([
         path: '/register',
         element: <Register></Register>
       },
-      
+
     ]
   },
 ]);
