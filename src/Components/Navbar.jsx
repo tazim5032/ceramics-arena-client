@@ -59,12 +59,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end gap-1 text-center" style={{ zIndex: 10 }}>
-                {
-                    user ? <NavLink className={({ isActive }) => isActive ?
-                        'text-[#23BE0A] border border-green-500 p-2 sm:mr-2 rounded' : 'p-2 sm:mr-2 rounded'} to="/update">
-                        <a className="font-bold">Update Profile</a></NavLink> :
-                        <a></a>
-                }
+               
                 {
                     user ? <div className="dropdown dropdown-end">
                         <label tabIndex={0}
