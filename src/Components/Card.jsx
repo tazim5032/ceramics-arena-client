@@ -27,7 +27,7 @@ const Card = ({ item, items, setItems }) => {
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Item has been deleted!",
+                                text: "Craft item has been deleted!",
                                 icon: "success"
                             });
 

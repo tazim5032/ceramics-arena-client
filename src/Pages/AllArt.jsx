@@ -29,7 +29,7 @@ const AllArt = () => {
                     text-xs font-medium
                      text-white shadow transition
                      duration-300 hover:bg-green-900">
-                                    View Property
+                                    View Details
                                 </Link></td>
                             </tr>)
                         }
