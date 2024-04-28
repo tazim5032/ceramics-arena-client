@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardCat = ({ item, items, setItems }) => {
-    const { _id, name, subcategory, description, price, rating, processing_time, stockStatus, photo } = item;
+    const { _id, name, subcategory, description, price, rating, time, stockStatus, photo } = item;
 
     const handleDelete = id => {
         fetch(`http://localhost:5000/delete/${id}`, {
@@ -47,7 +47,7 @@ const CardCat = ({ item, items, setItems }) => {
                         </span>
                     </div>
                     <div className="mt-2">
-                        <span className="text-xs text-gray-600">Processing Time: {processing_time} days</span>
+                        <span className="text-xs text-gray-600">Processing Time: {time} days</span>
                     </div>
                 </div>
                 
