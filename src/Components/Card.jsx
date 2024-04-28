@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoPricetagsOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Card = ({ item, items, setItems }) => {
     const { _id, name, subcategory, customization, price, time, rating, stockStatus, photo } = item;
+
+  
 
     const handleDelete = id => {
 
@@ -42,7 +44,7 @@ const Card = ({ item, items, setItems }) => {
     };
 
     return (
-        <div className="w-full max-w-xs mx-auto">
+        <div className="w-full max-w-xs mx-auto" >
             <div className="bg-white shadow-lg rounded-lg overflow-hidden h-full">
                 <img className="w-full h-48 object-cover object-center" src={photo} alt={name} />
 
@@ -50,7 +52,7 @@ const Card = ({ item, items, setItems }) => {
                     <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
                     <p className="text-sm text-gray-600">Category: {subcategory}</p>
 
-                    
+
                     <div className="lex justify-between items-center mt-2">
 
                         <p className="text-xs text-gray-600">Processing Time: {time} days</p>
@@ -87,7 +89,7 @@ const Card = ({ item, items, setItems }) => {
                     </div>
                 </div>
                 <div className="px-6 flex justify-end pb-2">
-                    <Link to={`/details/${_id}`} className="text-sm text-gray-600 hover:text-gray-900">
+                    <Link to={`/details/${_id}`}  className="text-sm text-gray-600 hover:text-gray-900">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             View Details
                         </button>
