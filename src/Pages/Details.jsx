@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Helmet from "react-helmet";
 import { useParams } from "react-router-dom";
 
 const Details = () => {
@@ -24,7 +25,9 @@ const Details = () => {
 
     return (
         <div className="container mx-auto px-4 pt-8">
-            
+            <Helmet>
+                <title>Details</title>
+            </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 {/* Left Column: Image */}
                 <div>

@@ -1,3 +1,4 @@
+import Helmet from "react-helmet";
 import Swal from "sweetalert2";
 import UseAuth from "../Hook/UseAuth";
 const AddCraft = () => {
@@ -47,6 +48,9 @@ const AddCraft = () => {
     }
     return (
         <div className="bg-[#FAF3E0] p-2 sm:p-24 sm:pt-8">
+            <Helmet>
+                <title>Add Craft Item</title>
+            </Helmet>
             <h1 className="text-3xl font-bold text-center mb-8">Add Craft Item</h1>
 
             <form onSubmit={handleAddProduct} >

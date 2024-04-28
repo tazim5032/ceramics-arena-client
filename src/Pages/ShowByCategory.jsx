@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Helmet from 'react-helmet';
 import { useParams } from 'react-router-dom';
 import CardCat from '../Components/CardCat';
 
@@ -16,6 +17,9 @@ const ShowByCategory = () => {
 
     return (
         <div className='bg-[#FAF3E0] py-12'>
+            <Helmet>
+                <title>{category.subcategory}</title>
+            </Helmet>
             <h1 className='text-5xl text-center font-bold text-blue-600'>{category.subcategory}</h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
         gap-12 pt-12 mx-[2%] sm:mx-[4%]">

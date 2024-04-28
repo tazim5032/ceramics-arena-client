@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Helmet from "react-helmet";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 //import UseAuth from "../Hook/UseAuth";
@@ -68,6 +69,9 @@ const Update = () => {
 
     return (
         <div className="bg-[#FAF3E0] p-2 sm:p-24 sm:pt-0">
+            <Helmet>
+                <title>Update</title>
+            </Helmet>
             
             <h1 className="text-2xl text-center pt-6">Update Product</h1>
 

@@ -1,3 +1,4 @@
+import Helmet from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 const AllArt = () => {
@@ -5,6 +6,9 @@ const AllArt = () => {
     //console.log(data);
     return (
         <div className="bg-white p-2 sm:p-24 sm:pt-8">
+            <Helmet>
+                <title>All Art & Craft Items</title>
+            </Helmet>
             <div className="overflow-x-auto">
                 <table className="table">
                     {/* head */}
