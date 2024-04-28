@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const CardCat = ({ item, items, setItems }) => {
-    const { _id, name, subcategory, price, rating, stockStatus, photo } = item;
+    const { _id, name, subcategory, description, price, rating, processing_time, stockStatus, photo } = item;
 
     const handleDelete = id => {
         fetch(`http://localhost:5000/delete/${id}`, {
@@ -31,11 +31,12 @@ const CardCat = ({ item, items, setItems }) => {
                 <img className="w-full h-48 object-cover object-center" src={photo} alt={name} />
                 <div className="py-4 px-6">
                     <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
-                    <p className="text-sm text-gray-600">{subcategory}</p>
+                    <p className="text-sm text-blue-600 font-bold py-2">{subcategory}</p>
+                    <p className="text-sm text-gray-600">{description}</p>
                     <div className="flex justify-between items-center mt-4">
                         <div className="flex items-center">
                             <span className="text-sm text-gray-700 mr-2">
-                                ${price}
+                                Price: ${price}
                             </span>
                             <span className="text-xs text-gray-500">
                                 Rating: {rating}
@@ -45,14 +46,18 @@ const CardCat = ({ item, items, setItems }) => {
                             {stockStatus}
                         </span>
                     </div>
+                    <div className="mt-2">
+                        <span className="text-xs text-gray-600">Processing Time: {processing_time} days</span>
+                    </div>
                 </div>
                 
-                <div className="px-6 flex justify-end pb-2">
+                <div className="px-6 flex justify-between items-end pb-4">
                     <Link to={`/details/${_id}`} className="text-sm text-gray-600 hover:text-gray-900">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             View Details
                         </button>
                     </Link>
+                    
                 </div>
             </div>
         </div>
