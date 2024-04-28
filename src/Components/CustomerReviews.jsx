@@ -1,6 +1,6 @@
 const CustomerReviews = () => {
     return (
-        <section className="bg-gradient-to-b from-gray-200 to-cyan-200 py-16 mx-[1%] md:mx-[3%] rounded-xl">
+        <section className="bg-gradient-to-b from-gray-50 to-cyan-100 py-16 mx-[1%] md:mx-[3%] rounded-xl mt-12">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-3xl font-bold text-center text-gray-800 mb-8"
                     data-aos="flip-up" data-aos-duration="1000">Customer Reviews</h2>

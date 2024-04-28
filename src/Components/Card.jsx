@@ -7,20 +7,36 @@ const Card = ({ item, items, setItems }) => {
     const { _id, name, subcategory, price, rating, stockStatus, photo } = item;
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/delete/${id}`, {
-            method: 'DELETE',
-        })
-        .then(res => res.json())
-        .then(data => {
-            if (data.deletedCount > 0) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Item has been deleted!",
-                    icon: "success"
-                });
 
-                const remaining = items.filter(cof => cof._id != _id);
-                setItems(remaining);
+
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/delete/${id}`, {
+                    method: 'DELETE',
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Item has been deleted!",
+                                icon: "success"
+                            });
+
+                            const remaining = items.filter(cof => cof._id != _id);
+                            setItems(remaining);
+                        }
+                    });
+
+
             }
         });
     };
@@ -35,9 +51,9 @@ const Card = ({ item, items, setItems }) => {
                     <div className="flex justify-between items-center mt-4">
                         <div className="flex items-center">
                             <span className="text-sm text-gray-700 mr-2">
-                                ${price}
+                                Price: ${price}
                             </span>
-                            <span className="text-xs text-gray-500">
+                            <span className="text-sm text-gray-500">
                                 Rating: {rating}
                             </span>
                         </div>

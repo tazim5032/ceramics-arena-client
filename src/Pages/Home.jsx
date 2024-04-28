@@ -1,5 +1,6 @@
 import Category from "../Components/Category";
 import CustomerReviews from "../Components/CustomerReviews";
+import NewsletterSignup from "../Components/NewsletterSignup";
 import ShowCardHome from "../Components/ShowCardHome";
 import Slider from "../Components/Slider";
 
@@ -10,6 +11,7 @@ const Home = () => {
             <ShowCardHome></ShowCardHome>
             <Category></Category>
             <CustomerReviews></CustomerReviews>
+            <NewsletterSignup></NewsletterSignup>
         </div>
     );
 };
