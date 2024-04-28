@@ -31,18 +31,18 @@ const AddCraft = () => {
             },
             body: JSON.stringify(info) //data gula k stringfy kore server e pathaitece
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Craft Item Successfully!',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Craft Item Successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
+            })
 
     }
     return (
@@ -57,7 +57,7 @@ const AddCraft = () => {
                         </label>
                         <label className="input-group">
                             <input type="text" name="name" placeholder="Item Name"
-                                className="input input-bordered w-full" required/>
+                                className="input input-bordered w-full" required />
                         </label>
                     </div>
 
@@ -65,10 +65,13 @@ const AddCraft = () => {
                         <label className="label">
                             <span className="label-text">Subcategory Name</span>
                         </label>
-                        
-                        
+
+
                         <div className="input-group">
-                            <select name="subcategory" className="select select-bordered w-full">
+                            <select name="subcategory"
+                                className="select select-bordered w-full"
+                                required >
+                                <option value="">Choose a Category</option>
                                 <option value="Clay made pottery">Clay made pottery</option>
                                 <option value="Stoneware">Stoneware</option>
                                 <option value="Porcelain">Porcelain</option>
@@ -87,7 +90,7 @@ const AddCraft = () => {
                         </label>
                         <label className="input-group">
                             <input type="text" name="description" placeholder="Short Description"
-                                className="input input-bordered w-full" required/>
+                                className="input input-bordered w-full" required />
                         </label>
                     </div>
 
@@ -110,7 +113,7 @@ const AddCraft = () => {
                         <label className="input-group">
                             <input type="number" name="rating" placeholder="Rating"
                                 className="input input-bordered w-full" step="any"
-                                min="0" max="5" required/>
+                                min="0" max="5" required />
                         </label>
                     </div>
 
@@ -120,7 +123,7 @@ const AddCraft = () => {
                         </label>
                         <label className="input-group">
                             <input type="number" name="time" placeholder="Processing Time"
-                                className="input input-bordered w-full" required/>
+                                className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>
@@ -131,7 +134,9 @@ const AddCraft = () => {
                             <span className="label-text">Customization</span>
                         </label>
                         <div className="input-group">
-                            <select name="customization" className="select select-bordered w-full">
+                            <select name="customization" 
+                            className="select select-bordered w-full" required>
+                                <option value="">Choose an Option</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
@@ -143,7 +148,9 @@ const AddCraft = () => {
                             <span className="label-text">Stock Status</span>
                         </label>
                         <div className="input-group">
-                            <select name="stockStatus" className="select select-bordered w-full">
+                            <select name="stockStatus" 
+                            className="select select-bordered w-full" required>
+                            <option value="">Choose an Option</option>
                                 <option value="In Stock">In stock</option>
                                 <option value="Made to order">Made to order</option>
                             </select>
@@ -158,7 +165,7 @@ const AddCraft = () => {
                         </label>
                         <label className="input-group">
                             <input type="text" name="photo" placeholder="Photo URL"
-                                className="input input-bordered w-full" required/>
+                                className="input input-bordered w-full" required />
                         </label>
                     </div>
                 </div>
@@ -170,7 +177,7 @@ const AddCraft = () => {
                         </label>
                         <label className="input-group">
                             <input type="text" name="username" defaultValue={user.displayName}
-                                className="input input-bordered w-full" disabled/>
+                                className="input input-bordered w-full" disabled />
                         </label>
                     </div>
 
@@ -180,7 +187,7 @@ const AddCraft = () => {
                         </label>
                         <label className="input-group">
                             <input type="text" name="email" defaultValue={user.email}
-                                className="input input-bordered w-full" disabled/>
+                                className="input input-bordered w-full" disabled />
                         </label>
                     </div>
                 </div>

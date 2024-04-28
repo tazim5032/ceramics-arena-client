@@ -15,7 +15,8 @@ const MyArtList = () => {
     }, [user])
     return (
         
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
+           <div className="bg-[#FAF3E0]">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
         gap-12 pt-12 mx-[2%] sm:mx-[4%]">
             {
                 items.map(item => <Card 
@@ -26,6 +27,7 @@ const MyArtList = () => {
                 ></Card>)
             }
         </div>
+           </div>
         
     );
 };
