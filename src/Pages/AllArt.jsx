@@ -5,7 +5,7 @@ const AllArt = () => {
     const data = useLoaderData();
     //console.log(data);
     return (
-        <div className="bg-white p-2 sm:p-24 sm:pt-8">
+        <div className=" p-2 sm:p-24 sm:pt-8">
             <Helmet>
                 <title>All Art & Craft Items</title>
             </Helmet>

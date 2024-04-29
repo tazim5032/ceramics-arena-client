@@ -15,11 +15,10 @@ const Category = () => {
     return (
 
 
-        <div className="bg-gradient-to-b 
-        from-gray-50 to-cyan-100 mx-[1%] md:mx-[3%] rounded-xl mt-24 pb-12">
+        <div className=" mx-[1%] md:mx-[3%] rounded-xl mt-24 pb-12 border-2">
 
-            <h1 className="text-5xl text-center font-bold text-blue-600 pt-12">Art & Craft Categories</h1>
-            <h1 className="text-center text-black font-medium pt-2">Art & Craft Categories encompass a wide spectrum of creative pursuits, from traditional mediums like painting to modern techniques like digital art. </h1>
+            <h1 className="text-5xl text-center font-bold  pt-12">Art & Craft Categories</h1>
+            <h1 className="text-center  font-medium pt-2">Art & Craft Categories encompass a wide spectrum of creative pursuits, from traditional mediums like painting to modern techniques like digital art. </h1>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 
                     gap-12 pt-12 mx-[2%] sm:mx-[4%]">
                 {

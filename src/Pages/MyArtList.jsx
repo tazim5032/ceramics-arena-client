@@ -16,7 +16,7 @@ const MyArtList = () => {
     }, [user])
     return (
 
-        <div className="bg-[#FAF3E0]">
+        <div className="">
             <Helmet>
                 <title>My Art&Craft List</title>
             </Helmet>

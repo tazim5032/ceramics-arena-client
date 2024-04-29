@@ -16,7 +16,7 @@ const ShowByCategory = () => {
     },[])
 
     return (
-        <div className='bg-[#FAF3E0] py-12'>
+        <div className='py-12'>
             <Helmet>
                 <title>{category.subcategory}</title>
             </Helmet>

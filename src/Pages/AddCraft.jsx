@@ -47,7 +47,7 @@ const AddCraft = () => {
 
     }
     return (
-        <div className="bg-[#FAF3E0] p-2 sm:p-24 sm:pt-8">
+        <div className=" p-2 sm:p-24 sm:pt-8">
             <Helmet>
                 <title>Add Craft Item</title>
             </Helmet>

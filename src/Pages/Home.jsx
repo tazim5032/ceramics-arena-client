@@ -7,15 +7,15 @@ import Slider from "../Components/Slider";
 
 const Home = () => {
     return (
-        <div className="bg-[#FAF3E0]">
+        <div className="">
             <Helmet>
                 <title>Home</title>
             </Helmet>
             <Slider></Slider>
-            <ShowCardHome></ShowCardHome>
-            <Category></Category>
-            <CustomerReviews></CustomerReviews>
-            <NewsletterSignup></NewsletterSignup>
+            <ShowCardHome className='dark:bg-gray-800 py-6 dark:text-gray-100'></ShowCardHome>
+            <Category className='dark:bg-gray-800 py-6 dark:text-gray-100'></Category>
+            <CustomerReviews className='dark:bg-gray-800 py-6 dark:text-gray-100' ></CustomerReviews>
+            <NewsletterSignup className='dark:bg-gray-800 py-6 dark:text-gray-100'></NewsletterSignup>
         </div>
     );
 };

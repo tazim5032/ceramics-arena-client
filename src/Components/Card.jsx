@@ -45,27 +45,27 @@ const Card = ({ item, items, setItems }) => {
 
     return (
         <div className="w-full max-w-xs mx-auto" >
-            <div className="bg-white shadow-lg rounded-lg overflow-hidden h-full">
+            <div className="shadow-lg rounded-lg overflow-hidden h-full border-2">
                 <img className="w-full h-48 object-cover object-center" src={photo} alt={name} />
 
                 <div className="py-4 px-6">
-                    <h2 className="text-xl font-semibold text-gray-800">{name}</h2>
-                    <p className="text-sm text-gray-600">Category: {subcategory}</p>
+                    <h2 className="text-xl font-semibold ">{name}</h2>
+                    <p className="text-sm ">Category: {subcategory}</p>
 
 
                     <div className="lex justify-between items-center mt-2">
 
-                        <p className="text-xs text-gray-600">Processing Time: {time} days</p>
-                        <p className="text-xs text-gray-700 mr-2 mt-2 ">
+                        <p className="text-xs ">Processing Time: {time} days</p>
+                        <p className="text-xs mr-2 mt-2 ">
                             Customization: <span className="uppercase">{customization}</span>
                         </p>
                     </div>
                     <div className="flex justify-between items-center mt-4">
                         <div className="flex items-center">
-                            <span className="text-sm text-gray-700 mr-2">
+                            <span className="text-sm  mr-2">
                                 Price: ${price}
                             </span>
-                            <span className="text-sm text-gray-500">
+                            <span className="text-sm ">
                                 Rating: {rating}
                             </span>
                         </div>
