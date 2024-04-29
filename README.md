@@ -3,15 +3,14 @@
 
 # Ceramics Arena
 
+### Selected Category : Ceramics and Pottery
 Ceramics Arena is a full-stack web application for showcasing and selling ceramics and pottery items. It provides users with various features such as authentication, product management, and a visually appealing user interface.
-
-Certainly! Here's the updated section for the technologies used with links:
 
 ---
 
 ## Key Features
 
-1. **Authentication**: Users can log in using Google, GitHub, or email/password authentication.
+1. **Authentication**: Users can log in using Google, GitHub, or email and password authentication.
 2. **Product Management**: Logged-in users can add, update, and delete their own products.
 3. **Filtering**: Users can filter products based on customization criteria.
 4. **Light and Dark Mode**: The website supports both light and dark modes for user preference.
@@ -37,9 +36,6 @@ Certainly! Here's the updated section for the technologies used with links:
 - [React Tooltip](https://www.npmjs.com/package/react-tooltip): A customizable tooltip component for React applications.
 - [Sweet Alert](https://sweetalert2.github.io/): A library for creating beautiful, responsive, and customizable alerts and modals.
 
----
-
-Certainly! Here's an expanded version of the project setup section that includes the setup for React Router DOM, Tailwind CSS, and DaisyUI:
 
 ---
 
