@@ -56,7 +56,7 @@ const Register = () => {
 
 
     return (
-        <div className="bg-cyan-50 mx-[1%] md:mx[10%] lg:mx-[20%] rounded-xl">
+        <div className=" mx-[1%] md:mx[10%] lg:mx-[20%] rounded-xl border-2 mt-12">
             <Helmet>
                 <title>Register</title>
             </Helmet>
