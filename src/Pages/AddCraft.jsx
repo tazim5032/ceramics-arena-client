@@ -34,13 +34,13 @@ const AddCraft = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Success!',
                         text: 'Craft Item Added Successfully!',
                         icon: 'success',
-                        confirmButtonText: 'Cool'
+                        confirmButtonText: 'Ok'
                     })
                 }
             })
@@ -155,8 +155,8 @@ const AddCraft = () => {
                             <select name="stockStatus" 
                             className="select select-bordered w-full" required>
                             <option value="">Choose an Option</option>
-                                <option value="In Stock">In stock</option>
-                                <option value="Made to order">Made to order</option>
+                                <option value="in Stock">In stock</option>
+                                <option value="made To Order">Made to order</option>
                             </select>
                         </div>
                     </div>

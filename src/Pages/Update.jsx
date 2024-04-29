@@ -86,12 +86,12 @@ const Update = () => {
     }
 
     return (
-        <div className="bg-[#FAF3E0] p-2 sm:p-24 sm:pt-0">
+        <div className=" p-2 sm:p-24 sm:pt-0">
             <Helmet>
                 <title>Update</title>
             </Helmet>
 
-            <h1 className="text-2xl text-center pt-6">Update Product</h1>
+            <h1 className="text-3xl text-center my-12 font-bold">Update Craft Item</h1>
 
             <form onSubmit={handleUpdate} >
                 <div className="md:flex mb-4">
@@ -197,8 +197,8 @@ const Update = () => {
                                 name="stockStatus"
                                 className="select select-bordered w-full"
                             >
-                                <option value="inStock">In stock</option>
-                                <option value="madeToOrder">Made to order</option>
+                                <option value="in Stock">In stock</option>
+                                <option value="made To Order">Made to order</option>
                             </select>
                         </div>
                     </div>

@@ -19,7 +19,7 @@ const ShowCard = ({item}) => {
                                 Rating: {rating}
                             </span>
                         </div>
-                        <span className={`text-xs font-semibold px-2 py-1 uppercase rounded bg-[#F6D9E2]`}>
+                        <span className={`text-xs font-semibold px-2 py-1 uppercase rounded`}>
                             {stockStatus}
                         </span>
                     </div>

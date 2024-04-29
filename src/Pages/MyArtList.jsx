@@ -31,7 +31,7 @@ const MyArtList = () => {
             <Helmet>
                 <title>My Art&Craft List</title>
             </Helmet>
-            <div className="flex justify-center mb-8">
+            <div className="flex justify-center my-8">
                 <label className="mr-2">Filter by Customization:</label>
                 <select
                     className="border border-gray-300 rounded-md p-1"
