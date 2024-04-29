@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import Card from "../Components/Card";
 import UseAuth from "../Hook/UseAuth";
@@ -43,16 +43,18 @@ const MyArtList = () => {
                     <option value="no">Not Customizable</option>
                 </select>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pt-12 mx-[2%] sm:mx-[4%] mb-[500px]">
-                {filteredItems.map(item => (
-                    <Card
-                        key={item._id}
-                        item={item}
-                        items={items}
-                        setItems={setItems}
-                    />
-                ))}
-            </div>
+            
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 pt-12 mx-[2%] sm:mx-[4%] mb-[500px]">
+                    {filteredItems.map(item => (
+                        <Card
+                            key={item._id}
+                            item={item}
+                            items={items}
+                            setItems={setItems}
+                        />
+                    ))}
+                </div>
+            
         </div>
     );
 };
