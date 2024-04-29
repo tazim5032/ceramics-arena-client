@@ -79,7 +79,7 @@ const News = () => (
 );
 
 const NewsletterSignup = () => (
-    <div className='border-2 mx-[1%] md:mx-[3%] mt-24 pb-12'>
+    <div className='border-2 rounded-xl mx-[1%] md:mx-[3%] mt-24 pb-12'>
         <BlogSection />
         <News />
     </div>

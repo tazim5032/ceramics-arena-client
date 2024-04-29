@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 
 const Update = () => {
-    
+
     const { id } = useParams();
     //console.log('is is ', id);
 
@@ -16,17 +16,35 @@ const Update = () => {
     useEffect(() => {
 
         fetch(`http://localhost:5000/updateProduct/${id}`)
-        .then(res => res.json())
-        .then(data =>{
-            setProduct(data);
-            //console.log(data)
-        })
-       
+            .then(res => res.json())
+            .then(data => {
+                setProduct(data);
+                //console.log(data)
+            })
+
     }, [id]);
 
-   // console.log('product is ',product);
+    //find already set customization bcz defaultValue is not working
+    useEffect(() => {
+        // Select the option based on product.customization after the component mounts
+        const selectElement = document.getElementById("customizationSelect");
+        if (selectElement) {
+            selectElement.value = product.customization;
+        }
+    }, [product.customization]);
 
-    const handleUpdate = e =>{
+    //find already set stock status bcz defaultValue is not working
+    useEffect(() => {
+
+        const selectElement = document.getElementById("stockStatusSelect");
+        if (selectElement) {
+            selectElement.value = product.stockStatus;
+        }
+    }, [product.stockStatus]);
+
+    // console.log('product is ',product);
+
+    const handleUpdate = e => {
         e.preventDefault();
 
         const form = e.target;
@@ -40,7 +58,7 @@ const Update = () => {
         const customization = form.customization.value;
         const stockStatus = form.stockStatus.value;
         const photo = form.photo.value;
-       
+
         const info = {
             name, subcategory, description, price,
             rating, time, customization, stockStatus, photo
@@ -51,19 +69,19 @@ const Update = () => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(info) 
+            body: JSON.stringify(info)
         })
-        .then(res => res.json())
-        .then(data => {
-            if(data.modifiedCount){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Craft Item Updated Successfully!',
-                    icon: 'success',
-                    confirmButtonText: 'ok'
-                  })
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Craft Item Updated Successfully!',
+                        icon: 'success',
+                        confirmButtonText: 'ok'
+                    })
+                }
+            })
 
     }
 
@@ -72,7 +90,7 @@ const Update = () => {
             <Helmet>
                 <title>Update</title>
             </Helmet>
-            
+
             <h1 className="text-2xl text-center pt-6">Update Product</h1>
 
             <form onSubmit={handleUpdate} >
@@ -91,11 +109,11 @@ const Update = () => {
                         <label className="label">
                             <span className="label-text">Subcategory Name</span>
                         </label>
-                        
-                        
+
+
                         <div className="input-group">
-                            <select name="subcategory" className="select select-bordered w-full" 
-                            defaultValue={product.subcategory}>
+                            <select name="subcategory" className="select select-bordered w-full"
+                                defaultValue={product.subcategory}>
                                 <option value="clay">Clay-made pottery</option>
                                 <option value="stoneware">Stoneware</option>
                                 <option value="porcelain">Porcelain</option>
@@ -124,7 +142,7 @@ const Update = () => {
                         </label>
                         <label className="input-group">
                             <input type="number" name="price" defaultValue={product.price}
-                                className="input input-bordered w-full" step="any"  />
+                                className="input input-bordered w-full" step="any" />
                         </label>
                     </div>
                 </div>
@@ -158,8 +176,11 @@ const Update = () => {
                             <span className="label-text">Customization</span>
                         </label>
                         <div className="input-group">
-                            <select name="customization" className="select select-bordered w-full"
-                            defaultValue={product.customization}>
+                            <select
+                                id="customizationSelect"
+                                name="customization"
+                                className="select select-bordered w-full"
+                            >
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
                             </select>
@@ -171,8 +192,11 @@ const Update = () => {
                             <span className="label-text">Stock Status</span>
                         </label>
                         <div className="input-group">
-                            <select name="stockStatus" className="select select-bordered w-full"
-                            defaultValue={product.stockStatus}>
+                            <select
+                                id="stockStatusSelect" 
+                                name="stockStatus"
+                                className="select select-bordered w-full"
+                            >
                                 <option value="inStock">In stock</option>
                                 <option value="madeToOrder">Made to order</option>
                             </select>
@@ -192,7 +216,7 @@ const Update = () => {
                     </div>
                 </div>
 
-                
+
 
 
 
@@ -200,7 +224,7 @@ const Update = () => {
                 <input className="btn btn-block bg-black text-white"
                     type="submit" value="Add" />
             </form>
-    
+
         </div>
     );
 };
