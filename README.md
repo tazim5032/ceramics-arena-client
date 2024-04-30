@@ -34,7 +34,7 @@ Ceramics Arena is a full-stack web application for showcasing and selling cerami
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
 - [DaisyUI](https://daisyui.com/): A component library built on top of Tailwind CSS for building accessible and customizable UI components.
 - [React Simple Typewriter](https://www.npmjs.com/package/react-simple-typewriter): A simple typewriter effect for React components.
-- [React Awesome Reveal](https://www.npmjs.com/package/react-awesome-reveal): A library for animating React components when they become visible on the screen.
+- [React Tooltip](https://react-tooltip.com/): React Tooltip is a React library used to create customizable tooltips for React components. 
 - [Sweet Alert](https://sweetalert2.github.io/): A library for creating beautiful, responsive, and customizable alerts and modals.
 
 
