@@ -5,7 +5,7 @@
 
 ### Selected Category : Ceramics and Pottery
 
-- [Live Link](https://ceramics-arena-client.web.app/):
+- [Live Link](https://ceramics-arena-client.web.app/)
 
 Ceramics Arena is a full-stack web application for showcasing and selling ceramics and pottery items. It provides users with various features such as authentication, product management, and a visually appealing user interface.
 
@@ -33,10 +33,8 @@ Ceramics Arena is a full-stack web application for showcasing and selling cerami
 - [Node.js](https://nodejs.org/): A JavaScript runtime environment that executes JavaScript code outside a web browser.
 - [Tailwind CSS](https://tailwindcss.com/): A utility-first CSS framework for rapidly building custom designs.
 - [DaisyUI](https://daisyui.com/): A component library built on top of Tailwind CSS for building accessible and customizable UI components.
-- [Lottie React](https://www.npmjs.com/package/lottie-react): A library for adding Adobe After Effects animations to React projects.
 - [React Simple Typewriter](https://www.npmjs.com/package/react-simple-typewriter): A simple typewriter effect for React components.
 - [React Awesome Reveal](https://www.npmjs.com/package/react-awesome-reveal): A library for animating React components when they become visible on the screen.
-- [React Tooltip](https://www.npmjs.com/package/react-tooltip): A customizable tooltip component for React applications.
 - [Sweet Alert](https://sweetalert2.github.io/): A library for creating beautiful, responsive, and customizable alerts and modals.
 
 
