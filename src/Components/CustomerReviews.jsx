@@ -1,9 +1,12 @@
+import { Typewriter } from "react-simple-typewriter";
+
 const CustomerReviews = () => {
     return (
         <section className="py-16 mx-[1%] md:mx-[3%] rounded-xl mt-12 border-2">
             <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                 <h2 className="text-5xl font-bold text-center mb-8"
-                    data-aos="flip-up" data-aos-duration="1000">Customer Reviews</h2>
+                    data-aos="flip-up" data-aos-duration="1000">
+                    <Typewriter words={['Customer Reviews']} loop={true} /></h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="rounded-lg shadow-md overflow-hidden
              transform transition-all duration-500 hover:scale-105"

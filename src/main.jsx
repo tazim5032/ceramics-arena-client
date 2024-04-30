@@ -18,6 +18,7 @@ import MyArtList from './Pages/MyArtList';
 import Details from './Pages/Details';
 import Update from './Pages/Update';
 import ShowByCategory from './Pages/ShowByCategory';
+import Contact from './Pages/Contact';
 
 
 const router = createBrowserRouter([
@@ -29,12 +30,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/craft')
+        loader: () => fetch('https://ceramic-arena-server.vercel.app/craft')
       },
       {
         path: '/allart',
         element: <AllArt></AllArt>,
-        loader: () => fetch('http://localhost:5000/craft')
+        loader: () => fetch('https://ceramic-arena-server.vercel.app/craft')
       },
       {
         path: '/allCategory/:subcategory',
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
       },
 
     ]

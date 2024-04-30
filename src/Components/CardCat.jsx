@@ -7,22 +7,23 @@ const CardCat = ({ item, items, setItems }) => {
     const { _id, name, subcategory, description, price, rating, time, stockStatus, photo } = item;
 
     const handleDelete = id => {
-        fetch(`http://localhost:5000/delete/${id}`, {
+        fetch(`https://ceramic-arena-server.vercel.app/delete/${id}`, {
+            //mode: 'no-cors',
             method: 'DELETE',
         })
-        .then(res => res.json())
-        .then(data => {
-            if (data.deletedCount > 0) {
-                Swal.fire({
-                    title: "Deleted!",
-                    text: "Item has been deleted!",
-                    icon: "success"
-                });
+            .then(res => res.json())
+            .then(data => {
+                if (data.deletedCount > 0) {
+                    Swal.fire({
+                        title: "Deleted!",
+                        text: "Item has been deleted!",
+                        icon: "success"
+                    });
 
-                const remaining = items.filter(cof => cof._id != _id);
-                setItems(remaining);
-            }
-        });
+                    const remaining = items.filter(cof => cof._id != _id);
+                    setItems(remaining);
+                }
+            });
     };
 
     return (
@@ -50,14 +51,14 @@ const CardCat = ({ item, items, setItems }) => {
                         <span className="text-xs ">Processing Time: {time} days</span>
                     </div>
                 </div>
-                
+
                 <div className="px-6 flex justify-between items-end pb-4">
                     <Link to={`/details/${_id}`} className="text-sm text-gray-600 hover:text-gray-900">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             View Details
                         </button>
                     </Link>
-                    
+
                 </div>
             </div>
         </div>

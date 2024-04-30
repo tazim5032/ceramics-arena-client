@@ -6,7 +6,7 @@ import Swal from "sweetalert2";
 const Card = ({ item, items, setItems }) => {
     const { _id, name, subcategory, customization, price, time, rating, stockStatus, photo } = item;
 
-  
+
 
     const handleDelete = id => {
 
@@ -21,7 +21,8 @@ const Card = ({ item, items, setItems }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/delete/${id}`, {
+                fetch(`https://ceramic-arena-server.vercel.app/delete/${id}`, {
+                   // mode: 'no-cors',
                     method: 'DELETE',
                 })
                     .then(res => res.json())
@@ -89,7 +90,7 @@ const Card = ({ item, items, setItems }) => {
                     </div>
                 </div>
                 <div className="px-6 flex justify-end pb-2">
-                    <Link to={`/details/${_id}`}  className="text-sm text-gray-600 hover:text-gray-900">
+                    <Link to={`/details/${_id}`} className="text-sm text-gray-600 hover:text-gray-900">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             View Details
                         </button>

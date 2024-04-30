@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { Typewriter } from 'react-simple-typewriter';
 
 const LatestPost1 = () => (
     <div className=" rounded-lg shadow-md mb-6 border-2">
@@ -51,7 +52,8 @@ const LatestPost3 = () => (
 const BlogSection = () => (
     <section className="py-12 mt-12 mx-[2%] sm:mx-[4%] rounded-xl">
         <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-semibold mb-8 text-center">Latest Blog Posts</h2>
+            <h2 className="text-3xl font-semibold mb-8 text-center">
+            <Typewriter words={['Latest Blog Posts']} loop={true} /></h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <LatestPost1  />
                 <LatestPost2 />
@@ -65,7 +67,10 @@ const News = () => (
     <section className="mt-12 ">
         <div className="container mx-auto px-4">
             <div className="max-w-lg mx-auto p-8 rounded-lg shadow-md border-2">
-                <h2 className="text-2xl font-semibold mb-4">Subscribe to Our Newsletter</h2>
+             
+                <h2 className="text-2xl font-semibold mb-4">
+                <Typewriter words={['Subscribe to Our Newsletter']} loop={true} />
+                </h2>
                 <p className="mb-6">Stay updated with the latest crafting tips, trends, and product spotlights by subscribing to our newsletter.</p>
                 <form>
                     <div className="flex flex-col sm:flex-row">

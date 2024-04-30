@@ -4,6 +4,11 @@ import { Link, useLoaderData } from "react-router-dom";
 const AllArt = () => {
     const data = useLoaderData();
     //console.log(data);
+
+    if (!data) {
+        console.log('data');
+        return <div className="flex items-center justify-center"><div className="h-[400px] w-1/2 flex items-center justify-center"><span className="loading loading-bars loading-lg"></span></div></div>;
+    }
     return (
         <div className=" p-2 sm:p-24 sm:pt-8">
             <Helmet>

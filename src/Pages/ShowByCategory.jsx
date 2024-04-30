@@ -10,7 +10,7 @@ const ShowByCategory = () => {
     const [items, setItems] = useState([]);
    
     useEffect(() =>{
-        fetch(`http://localhost:5000/allCategory/${category.subcategory}`)
+        fetch(`https://ceramic-arena-server.vercel.app/allCategory/${category.subcategory}`)
         .then(res => res.json())
         .then(data => setItems(data))
     },[])

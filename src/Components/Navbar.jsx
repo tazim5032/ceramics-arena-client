@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { Typewriter } from "react-simple-typewriter";
 import UseAuth from "../Hook/UseAuth";
-import { getTheme } from "../utils";
 
 const Navbar = () => {
 
@@ -78,13 +78,16 @@ const Navbar = () => {
                         <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/myart"><a>My Art&Craft List</a></NavLink>
 
 
-
+                        <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/contact"><a>Contact Us</a></NavLink>
 
                     </ul>
                 </div>
                 <NavLink to="/">
                     <a className="btn btn-ghost text-xl md:text-3xl
-                     font-bold text-blue-500 hover:text-blue-700">Ceramics Arena</a>
+                     font-bold text-blue-500 hover:text-blue-700">
+                          <Typewriter words={['Ceramics Arena']} loop={true} />
+                          </a>
+                    
                 </NavLink>
 
 
@@ -103,8 +106,7 @@ const Navbar = () => {
 
                     <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/myart"><a>My Art&Craft List</a></NavLink>
 
-
-
+                    <NavLink className={({ isActive }) => isActive ? 'text-[#23BE0A] font-bold border border-green-500 p-2 sm:mr-2 rounded' : 'font-bold p-2 sm:mr-2 rounded'} to="/contact"><a>Contact Us</a></NavLink>
 
                 </ul>
             </div>
@@ -155,9 +157,15 @@ const Navbar = () => {
                         </ul>
                     </div>
                         :
-                        <Link to="/login">
+                        
+                        <div>
+                            <Link to="/login">
                             <button className="btn text-white bg-black">Login</button>
                         </Link>
+                        <Link to="/register">
+                            <button className="btn text-white bg-black">Register</button>
+                        </Link>
+                        </div>
                 }
                 {
                     user ? <button

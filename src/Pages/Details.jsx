@@ -7,7 +7,7 @@ const Details = () => {
     const [product, setProduct] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/singleProduct/${id}`)
+        fetch(`https://ceramic-arena-server.vercel.app/singleProduct/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data);

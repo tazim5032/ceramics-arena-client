@@ -25,7 +25,8 @@ const AddCraft = () => {
             rating, time, customization, stockStatus, photo, username, email
         };
 
-        fetch('http://localhost:5000/craft', {
+        fetch('https://ceramic-arena-server.vercel.app/craft', {
+          //  mode: 'no-cors',
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +52,8 @@ const AddCraft = () => {
             <Helmet>
                 <title>Add Craft Item</title>
             </Helmet>
-            <h1 className="text-3xl font-bold text-center mb-8">Add Craft Item</h1>
+            <h1 className="text-3xl font-bold text-center mb-8">Add Craft Item
+            </h1>
 
             <form onSubmit={handleAddProduct} >
                 <div className="md:flex mb-4">
@@ -138,8 +140,8 @@ const AddCraft = () => {
                             <span className="label-text">Customization</span>
                         </label>
                         <div className="input-group">
-                            <select name="customization" 
-                            className="select select-bordered w-full" required>
+                            <select name="customization"
+                                className="select select-bordered w-full" required>
                                 <option value="">Choose an Option</option>
                                 <option value="yes">Yes</option>
                                 <option value="no">No</option>
@@ -152,9 +154,9 @@ const AddCraft = () => {
                             <span className="label-text">Stock Status</span>
                         </label>
                         <div className="input-group">
-                            <select name="stockStatus" 
-                            className="select select-bordered w-full" required>
-                            <option value="">Choose an Option</option>
+                            <select name="stockStatus"
+                                className="select select-bordered w-full" required>
+                                <option value="">Choose an Option</option>
                                 <option value="in Stock">In stock</option>
                                 <option value="made To Order">Made to order</option>
                             </select>

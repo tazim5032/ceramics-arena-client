@@ -15,7 +15,7 @@ const Update = () => {
 
     useEffect(() => {
 
-        fetch(`http://localhost:5000/updateProduct/${id}`)
+        fetch(`https://ceramic-arena-server.vercel.app/updateProduct/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data);
@@ -64,7 +64,8 @@ const Update = () => {
             rating, time, customization, stockStatus, photo
         };
 
-        fetch(`http://localhost:5000/updateProduct/${id}`, {
+        fetch(`https://ceramic-arena-server.vercel.app/updateProduct/${id}`, {
+            mode: 'no-cors',
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -193,7 +194,7 @@ const Update = () => {
                         </label>
                         <div className="input-group">
                             <select
-                                id="stockStatusSelect" 
+                                id="stockStatusSelect"
                                 name="stockStatus"
                                 className="select select-bordered w-full"
                             >
