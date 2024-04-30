@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Typewriter } from "react-simple-typewriter";
+import { Tooltip } from "react-tooltip";
 import UseAuth from "../Hook/UseAuth";
 
 const Navbar = () => {
@@ -85,9 +86,9 @@ const Navbar = () => {
                 <NavLink to="/">
                     <a className="btn btn-ghost text-xl md:text-3xl
                      font-bold text-blue-500 hover:text-blue-700">
-                          <Typewriter words={['Ceramics Arena']} loop={true} />
-                          </a>
-                    
+                        <Typewriter words={['Ceramics Arena']} loop={true} />
+                    </a>
+
                 </NavLink>
 
 
@@ -126,21 +127,26 @@ const Navbar = () => {
                         <svg className="col-start-2 row-start-1 stroke-base-100 fill-base-100" xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                     </label>
                 )}
-               
+
                 {
                     user ? <div className="dropdown dropdown-end">
                         <label tabIndex={0}
                             className="btn btn-ghost btn-circle avatar"
-                            title={user?.displayName}>
-                                
-                            <div className="w-10 rounded-full" >
-                                <img
+                        >
+
+                            <div className="tool w-10 rounded-full" >
+                                <img className="idd"
                                     src={user?.photoURL ||
                                         "https://i.ibb.co/sjymvr8/Capture4.png"} />
                             </div>
+
+                            <Tooltip anchorSelect=".idd" place="bottom"  className="h-[80px]">
+                                {user?.displayName}
+                            </Tooltip>
+
                         </label>
 
-                       
+
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3
                         z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                             <li>
@@ -157,14 +163,14 @@ const Navbar = () => {
                         </ul>
                     </div>
                         :
-                        
+
                         <div>
                             <Link to="/login">
-                            <button className="btn text-white bg-black">Login</button>
-                        </Link>
-                        <Link to="/register">
-                            <button className="btn text-white bg-black">Register</button>
-                        </Link>
+                                <button className="btn text-white bg-black">Login</button>
+                            </Link>
+                            <Link to="/register">
+                                <button className="btn text-white bg-black">Register</button>
+                            </Link>
                         </div>
                 }
                 {

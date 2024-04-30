@@ -40,10 +40,14 @@ const Contact = () => {
         <title>Contact Us</title>
       </Helmet>
 
+
       {/* Contact Form */}
       <div className="max-w-lg mx-auto p-8  rounded-lg shadow-lg mt-8"
       data-aos="zoom-in-down" data-aos-duration="1000">
+
         <h2 className="text-2xl font-bold mb-6">Send us a Message</h2>
+
+
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
             <label htmlFor="name" className="block text-sm font-medium  mb-1">Name</label>
@@ -98,12 +102,17 @@ const Contact = () => {
       data-aos="zoom-in"
       data-aos-duration="1500">
         <p className="text-lg font-medium ">Contact Us</p>
-        <p className="text-sm ">123 Main Street, City, Country</p>
-        <p className="text-sm ">Phone: +123-456-7890</p>
-        <p className="text-sm ">Email: info@havencrest.com</p>
+        <p className="text-sm ">991 SSK Road, Feni</p>
+        <p className="text-sm ">Phone: +1 234-567-8901</p>
+        <p className="text-sm ">Email: ceramics@arena.com</p>
       </div>
     </div>
   );
 };
+
+
+
+
+
 
 export default Contact;
