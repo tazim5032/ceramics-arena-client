@@ -125,6 +125,39 @@ Ceramics Arena is a full-stack web application for showcasing and selling cerami
 - Explore different categories and filter products based on customization criteria.
 - Subscribe to the newsletter for updates.
 
+## Getting Started
+
+### Prerequisites
+
+Make sure you have the following installed on your system:
+- Git
+- Node.js (and npm)
+
+### Installation
+
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/tazim5032/edu-flow-client.git
+    ```
+
+2. Navigate to the project directory:
+    ```sh
+    cd edu-flow-client
+    ```
+
+3. Install the dependencies:
+    ```sh
+    npm install
+    ```
+
+4. Run the application:
+    ```sh
+    npm start
+    ```
+
+Your application should now be running on `http://localhost:3000`.
+
+
 ## Contributing
 
 Contributions are welcome! Please create a new branch and submit a pull request for any proposed changes.
