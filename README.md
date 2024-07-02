@@ -125,7 +125,6 @@ Ceramics Arena is a full-stack web application for showcasing and selling cerami
 - Explore different categories and filter products based on customization criteria.
 - Subscribe to the newsletter for updates.
 
-## Getting Started
 
 ### Prerequisites
 
